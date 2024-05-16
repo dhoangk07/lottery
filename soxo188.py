@@ -12,12 +12,8 @@ def parse_soxo188_api(province):
     return results
 
 def format_issue_list(issue_list):
-    # dataset = {'Giải': ['Giải tám', 'Giải bảy', 'Giải sáu', 'Giải năm', 'Giải tư', 'Giải ba', 'Giải nhì', 'Giải nhất', 'Giải Đặc Biệt'], 
-            #    'Giải Thưởng': ['100.000đ', '200.000đ', '400.000đ', '1.0000.000đ', '3.0000.000đ', '10.0000.000đ', '15.0000.000đ', '30.0000.000đ', '2.000.0000.000đ']}
-
-    dataset = {'Giải': ['G.8', 'G.7', 'G.6', 'G.5', 'G.4', 'G.3', 'G.2', 'G.1', 'G.ĐB'], 
-            'Giải Thưởng': ['100k VNĐ', '200k VNĐ', '400k VNĐ', '1 triệu VNĐ', '3 triệu VNĐ', '10 triệu VNĐ', '15 triệu VNĐ', '30 triệu VNĐ', '2 tỷ VNĐ']}
-    
+    dataset = {'Giải': ['Giải tám', 'Giải bảy', 'Giải sáu', 'Giải năm', 'Giải tư', 'Giải ba', 'Giải nhì', 'Giải nhất', 'Giải Đặc Biệt'], 
+               'Giải Thưởng': ['100.000đ', '200.000đ', '400.000đ', '1.0000.000đ', '3.0000.000đ', '10.0000.000đ', '15.0000.000đ', '30.0000.000đ', '2.000.0000.000đ']}
     detail = issue_list['detail']
     result = literal_eval(detail)[::-1]
     turn_num = issue_list['turnNum']
@@ -30,10 +26,10 @@ def format_issue_list(issue_list):
     df = pd.DataFrame(dataset)
     table = ff.create_table(df, height_constant=20)
     table.update_layout(
-        width=550,
-        height=250,
+        width=1110,
+        height=600,
         font=dict(family='Tahoma'),
-        font_size=10
+        font_size=20
     )
     return table
 
