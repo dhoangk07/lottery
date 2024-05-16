@@ -12,8 +12,12 @@ def parse_soxo188_api(province):
     return results
 
 def format_issue_list(issue_list):
-    dataset = {'Giải': ['Giải tám', 'Giải bảy', 'Giải sáu', 'Giải năm', 'Giải tư', 'Giải ba', 'Giải nhì', 'Giải nhất', 'Giải Đặc Biệt'], 
-               'Giải Thưởng': ['100.000đ', '200.000đ', '400.000đ', '1.0000.000đ', '3.0000.000đ', '10.0000.000đ', '15.0000.000đ', '30.0000.000đ', '2.000.0000.000đ']}
+    # dataset = {'Giải': ['Giải tám', 'Giải bảy', 'Giải sáu', 'Giải năm', 'Giải tư', 'Giải ba', 'Giải nhì', 'Giải nhất', 'Giải Đặc Biệt'], 
+            #    'Giải Thưởng': ['100.000đ', '200.000đ', '400.000đ', '1.0000.000đ', '3.0000.000đ', '10.0000.000đ', '15.0000.000đ', '30.0000.000đ', '2.000.0000.000đ']}
+
+    dataset = {'Giải': ['G.8', 'G.7', 'G.6', 'G.5', 'G.4', 'G.3', 'G.2', 'G.1', 'G.ĐB'], 
+            'Giải Thưởng': ['100k VNĐ', '200k VNĐ', '400k VNĐ', '1 triệu VNĐ', '3 triệu VNĐ', '10 triệu VNĐ', '15 triệu VNĐ', '30 triệu VNĐ', '2 tỷ VNĐ']}
+    
     detail = issue_list['detail']
     result = literal_eval(detail)[::-1]
     turn_num = issue_list['turnNum']
