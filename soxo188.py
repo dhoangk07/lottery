@@ -30,10 +30,10 @@ def format_issue_list(issue_list):
     df = pd.DataFrame(dataset)
     table = ff.create_table(df, height_constant=20)
     table.update_layout(
-        width=700,
-        height=300,
+        width=550,
+        height=250,
         font=dict(family='Tahoma'),
-        font_size=12
+        font_size=10
     )
     return table
 
